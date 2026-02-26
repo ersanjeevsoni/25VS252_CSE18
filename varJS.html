@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS Variable Data value types
+
+        // primitive : immutable single value and stores in memory.
+
+       // string====
+       var myName="Abhay";
+       console.log("my name is " + myName);
+       console.log(typeof(myName));
+       // number
+       var myMob=68679976967;
+       console.log("my Mobile no is " + myMob);
+       console.log(typeof(myMob));
+
+       //Boolean
+       var isMarried=true;
+       console.log(myName + " is married ? " + isMarried);
+       console.log(typeof(isMarried));
+       // Undefined
+       var myAdd;
+       console.log(myName + " address is " + myAdd );
+       console.log(typeof(myAdd));
+
+       // null
+       var myEmail=null;
+       console.log(myName + " e-mail address is " + myEmail);
+       console.log(typeof(myEmail));
+
+       // bigint
+       var myValue=BigInt(345435345634646456576);
+       console.log(myValue);
+       console.log(typeof(myValue));
+       //Symbol- unique primitive data value tpye in JS
+       var val1=Symbol("Hello");
+       var val2=Symbol("Hello");
+       console.log(val1==val2);
+       console.log(typeof(val1) + " and " + typeof(val2));
+
+    </script>
+</body>
+</html>
