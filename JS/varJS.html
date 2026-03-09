@@ -58,8 +58,17 @@
     };
     console.log(myInfo);
     //to find the lengh of object
-    console.log(Object.keys(myInfo).length);
+    var keys=Object.keys(myInfo)
+    console.log(keys.length);
     console.log(myInfo.branch);
+
+    for (let i=0;i<keys.length;i++){
+        console.log("details are " + keys[i] + " : " + myInfo[keys[i]]);
+    }
+    //iterate over object's property
+    for(let x in myInfo){
+        console.log(myInfo[x]);
+    }
     // array - collection of any data types in JS
     let studentDetails=[
         "Megha", 
@@ -73,6 +82,9 @@
 for(i=0;i<studentDetails.length;i++){
     console.log(studentDetails[i]);
 }
+for(let x in studentDetails){
+    console.log("details are " + studentDetails[x]);
+}
 //function - block of code i.e. perform particuler any task
 
 function myCal(){
@@ -81,7 +93,7 @@ function myCal(){
                 let result=num1+num2;
     console.log("Addition of two number is " + result);
 }
-myCal();
+myCal(); //function calling
 
 
     </script>
