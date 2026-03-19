@@ -116,8 +116,85 @@ function displayUser(user){
 }
 display(displayUser);
 
+//Promises:- A JavaScript Promise is an object representing the eventual outcome (completion or failure) of an asynchronous operation.
+//A promise object exists in one of three states: 
+
+/* Pending: The initial state; the operation is still in progress.
+Fulfilled: The operation completed successfully, and a result value is available.
+Rejected: The operation failed, and an error (reason) is available.  */
+
+let myPromises=new Promise(function(resolve, reject){
+    let age =25;
+    if(age>=18){
+        resolve("valid age");
+    }
+    else{
+        reject("wait for next year");
+    }
+});
+myPromises
+.then(result=>console.log(result))
+.catch(error=>console.log(error))
+.finally(console.log("Done"));
+
+// async await.. and fectching API using try catch
+// async and await are special JavaScript keywords introduced in ES2017 (ECMAScript 8) that provide a cleaner, more synchronous-looking way to work with Promises
+
+async function userData(){
+    try{
+         let response=await fetch('https://api.github.com/users/ersanjeevsoni');
+    let responseData=await response.json();
+    console.log(responseData);
+    }
+    catch(error){
+        console.log(error);
+    }  
+}
+userData();
+
+//higher order function:- 
+//Higher-order functions help make your code more reusable and modular by allowing you to work with functions like any other value.
+
+//map:- The map function is used to transform an array by applying a callback function to each element. It returns a new array.
+
+let num=[3,4,5,6,7];
+let square=num.map(n=>n*n);
+console.log(square);
+
+//reduce:- The reduce function accumulates array elements into a single value based on a callback function.
+let sum=num.reduce((total,n)=>total+n);
+console.log(sum);
+//The filter function is used to create a new array containing elements that satisfy a given condition.
+let sorting=num.filter(n=>n>3);
+console.log(sorting);
+//forEach
+// The forEach function executes a provided function once for each array element.
+
+num.forEach((n) => console.log(n * 2));
+
+// IIFE:- is a JavaScript function that runs as soon as it is defined.
+(function(){
+    console.log("Modern JS");
+})();
+//short code for above code using arrow
+
+(msg=>console.log("Hello React"))();
 
 
+//Local Storage:-JavaScript localStorage is part of the Web Storage API that allows web applications to store persistent data (key-value pairs) in the user's browser with no expiration date.
+
+let userInfo={
+    name:'John',
+    age:25,
+    mob:7967665786585,
+    eMail:"john23@gmail.com"
+};
+// Store the object as a JSON string
+localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+// Retrieve the string and parse it back into an object
+const savedUser = JSON.parse(localStorage.getItem('userInfo'));
+console.log(savedUser.name); // Outputs: John
 
 
     </script>
